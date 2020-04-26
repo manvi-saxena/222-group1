@@ -24,9 +24,9 @@ RUN python get-pip.py
 RUN pip install -U pip setuptools
 RUN pip install psutil
 
-RUN git clone https://github.com/tbalson/ise-222-docker-svm.git
+RUN git clone https://github.com/manvi-saxena/222-group1.git
 
-WORKDIR ise-222-docker-svm/
+WORKDIR 222-group1/
 
 RUN git pull
 
