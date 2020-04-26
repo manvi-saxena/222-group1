@@ -1,6 +1,5 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sb
 import sklearn 
 import numpy as np
 import os
@@ -10,7 +9,6 @@ from numpy import ndarray
 from sklearn.decomposition import PCA as pca
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix
-import time
 
 path = os.path.dirname(__file__)
 
