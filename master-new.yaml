@@ -1,0 +1,78 @@
+openapi: 3.0.0
+info:
+  version: "0.0-oas3"
+  title: Project 2020 Breast Cancer Data
+  description: A cloud service to classify breast cancer tumor data
+  termsOfService: 'http://swagger.io/terms/'
+  contact:
+    name: REST Service to classify breast cancer data
+  license:
+    name: Apache
+paths:
+  /data/output/<output>:
+    get:
+      tags:
+        - DATA
+      operationId: service.data.download
+      description: Downloads data from url
+      responses:
+        '200':
+          description: Data info
+          content:
+            application/json:
+              schema: {}
+ 
+  /data/pca/<filename1>/nc/<number>:
+    get:
+      tags:
+        - DATA
+      operationId: service.format.mypca
+      description: Performs PCA
+      responses:
+        '200':
+          description: PCA
+          content:
+            application/json:
+              schema: {}
+
+  /train/logreg/filename/<filename>/n/<n>:
+    get:
+      tags:
+        - DATA
+      operationId: service.train.logistic_regression
+      description: Logistic regression on data
+      responses:
+        '200':
+          description: Logistic regression 
+          content:
+            application/json:
+              schema: {}
+              
+  /test/logreg2/filename/<filename>/n/<n>:
+    get:
+      tags:
+        - DATA
+      operationId: service.train.logistic_regression_test
+      description: Logistic regression on data
+      responses:
+        '200':
+          description: Logistic regression 
+          content:
+            application/json:
+              schema: {}    
+              
+  /test/confusion_matrix/filename/<filename>/n/<n>/C/<arg1>/solver/<arg2>:
+    get:
+      tags:
+        - DATA
+      operationId: service.test.gen_cof_mat
+      description: Confusion matrix
+      responses:
+        '200':
+          description: Confusion matrix 
+          content:
+            application/json:
+              schema: {} 
+
+servers:
+  - url: 'http://localhost:8080/proj20'

@@ -1,0 +1,135 @@
+swagger: "2.0"
+info: 
+  version: "0.0.1"
+  title: "project demo"
+  description: "A simple service to get data from a cloud storage service"
+  termsOfService: "http://swagger.io/terms/"
+  contact: 
+    name: "Cloudmesh REST Service Example with AI"
+  license: 
+    name: "Apache"
+host: "localhost:8080"
+basePath: "/project19"
+schemes: 
+  - "http"
+consumes: 
+  - "application/json"
+produces: 
+  - "application/json"
+paths: 
+  /data/output/<output>:
+    get:
+      tags:
+        - DATA
+      operationId: service.data.download
+      description: "Downloads data from url"
+      produces: 
+        - "application/json"
+      responses: 
+        "200":
+          description: "Data info"
+          schema: {}
+
+  /data/split/<filename>/<ratio>:
+    get:
+      tags:
+        - DATA
+      operationId: service.data.partition
+      description: "Splits data up"
+      produces: 
+        - "application/json"
+      responses: 
+        "200":
+          description: "Data info"
+          schema: {}
+
+  /data/numeric/<filename>/:
+    get:
+      tags:
+        - DATA
+      operationId: service.data.numeric_data
+      description: "Splits data up"
+      produces: 
+        - "application/json"
+      responses: 
+        "200":
+          description: "Data info"
+          schema: {}
+
+  /selection/<filename>/player_selection/<player_selection>:
+    get:
+      tags:
+        - PARTITION
+      operationId: service.partition.selection
+      description: "Split up downloaded data"
+      produces: 
+        - "application/json"
+      responses: 
+        "200":
+          description: "Split data into test and train sets"
+          schema: {}
+
+  /data/boxplot/raw/<filename>:
+    get:
+      tags:
+        - TRAIN
+      operationId: service.data.create_boxplot
+      description: "creat boxplot with raw data"
+      produces: 
+        - "application/png"
+      responses: 
+        "200":
+          description: "train data"
+          schema: {}
+
+  /data/boxplot/norm/<filename>:
+    get:
+      tags:
+        - TRAIN
+      operationId: service.data.create_boxplotNorm
+      description: "creat boxplot with normalized data"
+      produces: 
+        - "application/png"
+      responses: 
+        "200":
+          description: "train data"
+          schema: {}
+
+  /experiment/knn/<filename>:
+    get:
+      tags:
+        - SVM
+      operationId: service.partition.nfl_knn
+      description: "knn on the nfl data set"
+      produces: 
+        - "application/json"
+      responses: 
+        "200":
+          description: "perform knn"
+          schema: {}
+
+  /experiment/knn/results/boxplot/<filename>:
+    get:
+      tags:
+        - SVM
+      operationId: service.partition.nfl_knn_results_boxplot
+      description: "knn on the nfl data set"
+      produces: 
+        - "application/png"
+      responses: 
+        "200":
+          description: "perform knn"
+          schema: {}
+
+  /experiment/svm/train/<train>/test/<test>:
+    get:
+      tags:
+        - SVM
+      operationId: service.svm.svm
+      description: "knn on the nfl data set"
+      produces: 
+        - "application/png"
+      responses: 
+        "200":
+          description: "perform knn"
+          schema: {} 
