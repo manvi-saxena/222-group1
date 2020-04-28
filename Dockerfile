@@ -32,5 +32,5 @@ RUN git pull
 
 EXPOSE 8080
 
-CMD ["make", "start"]
-#CMD ["bash"]
+#CMD ["make", "start"]
+CMD ["bash"]
