@@ -6,7 +6,7 @@ import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.externals.joblib import Memory
+from joblib import Memory
 from sklearn.datasets import load_svmlight_file
 from sklearn.svm import SVC
 from os import listdir
