@@ -1,5 +1,5 @@
-connexion==2.6.0
 connexion[swagger-ui]
+connexion==2.6.0
 Flask==1.1.2
 jsonschema==2.6.0
 matplotlib==3.0.3
