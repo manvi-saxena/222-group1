@@ -3,7 +3,7 @@ connexion==2.6.0
 Flask==1.1.2
 jsonschema==2.6.0
 matplotlib==3.0.3
-numpy==1.16.2
+numpy==1.22.0
 openapi-spec-validator==0.2.6
 pathlib==1.0.1
 requests==2.21.0
